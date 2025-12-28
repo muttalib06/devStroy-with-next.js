@@ -12,10 +12,12 @@ import {
   FileText,
 } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +33,10 @@ const Navbar = () => {
     { name: "Projects", href: "/project", icon: Briefcase },
     { name: "Blog", href: "/blog", icon: FileText },
     { name: "Contact", href: "/contact", icon: Mail },
+    { name: "Dashboard", href: "/dashboard", icon: FileText },
   ];
+
+  if (pathname === "/dashboard") return <></>;
 
   return (
     <nav
