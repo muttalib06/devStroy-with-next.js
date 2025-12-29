@@ -34,6 +34,7 @@ const Navbar = () => {
     { name: "Blog", href: "/blog", icon: FileText },
     { name: "Contact", href: "/contact", icon: Mail },
     { name: "Dashboard", href: "/dashboard", icon: FileText },
+    { name: "Foods", href: "/foods", icon: FileText },
   ];
 
   if (pathname === "/dashboard") return <></>;
@@ -70,8 +71,18 @@ const Navbar = () => {
                   className="relative px-4 py-2 text-gray-300 hover:text-[#ffc107] transition-colors duration-300 group"
                 >
                   <span className="relative z-10 flex items-center space-x-2">
-                    <Icon className="w-4 h-4" />
-                    <span>{link.name}</span>
+                    <Icon
+                      className={`w-4 h-4 ${
+                        pathname === link.href ? "text-[#ffc107]" : ""
+                      }`}
+                    />
+                    <span
+                      className={`${
+                        pathname === link.href ? "text-[#ffc107]" : ""
+                      }`}
+                    >
+                      {link.name}
+                    </span>
                   </span>
                   <span className="absolute inset-0 bg-[#ffc107]/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></span>
                 </Link>
