@@ -8,6 +8,7 @@ import {
   Mail,
   ChevronDown,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Error({ error, reset }) {
   const [showDetails, setShowDetails] = useState(false);
@@ -97,13 +98,13 @@ export default function Error({ error, reset }) {
             Try Again
           </button>
 
-          <a
+          <Link
             href="/"
             className="flex-1 inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3 sm:py-3.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium text-sm sm:text-base transition-all duration-200 border border-slate-700 hover:border-slate-600 group"
           >
             <Home className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
             Go Home
-          </a>
+          </Link>
         </div>
 
         {/* Support Contact */}
